@@ -3,7 +3,6 @@ import React, { Component } from "react";
 export default class Statistics extends Component {
   render() {
     const { good, neutral, bad } = this.props.state;
-    console.log(Object.keys(this.props.state));
     const { percent, total } = this.props;
 
     return (

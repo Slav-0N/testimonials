@@ -26,17 +26,19 @@ export default class App extends Component {
   render() {
     const total = this.countTotalFeedback();
     return (
-      <Section title="Заголовок раздела ____">
+      <Section>
         <Dashboard
           options={Object.keys(this.state)}
           incrementVoice={this.incrementVoice}
         />
-        {total > 0 && (
+        {total > 0 ? (
           <Statistics
             state={this.state}
             percent={this.countPositiveFeedbackPercentage}
             total={this.countTotalFeedback}
           />
+        ) : (
+          <h2> No feedback given </h2>
         )}
       </Section>
     );
